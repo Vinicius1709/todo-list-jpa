@@ -3,13 +3,33 @@ package br.com.todolist.model;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Teste implements Serializable{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Teste implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private String nome;
-	private int cpf;
-	private Date data_nascimento;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	private String nome;
+	
+	private int cpf;
+	
+	private Date dataNascimento;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getNome() {
 		return nome;
@@ -27,20 +47,12 @@ public class Teste implements Serializable{
 		this.cpf = cpf;
 	}
 
-	public Date getData_nascimento() {
-		return data_nascimento;
+	public Date getDataNascimento() {
+		return dataNascimento;
 	}
 
-	public void setData_nascimento(Date data_nascimento) {
-		this.data_nascimento = data_nascimento;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 	@Override
