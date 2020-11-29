@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
-import br.com.todolist.model.Usuario;
+import br.com.todolist.model.Tela;
 import br.com.todolist.util.Transacional;
 
 public class UsuarioRepository implements Serializable{
@@ -16,7 +16,7 @@ public class UsuarioRepository implements Serializable{
 	private EntityManager entityManager;
 	
 	@Transacional
-	public void salvar(Usuario usuario) {
+	public void salvar(Tela usuario) {
 		entityManager.merge(usuario);
 	}
 }

@@ -6,7 +6,7 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.com.todolist.model.Usuario;
+import br.com.todolist.model.Tela;
 import br.com.todolist.repositories.UsuarioRepository;
 
 @Named
@@ -19,17 +19,17 @@ public class UsuarioBean implements Serializable{
 	
 	private UsuarioRepository repository;
 	
-	private Usuario novoUsuario;
+	private Tela novoUsuario;
 	
 	public UsuarioBean() {
-		novoUsuario = new Usuario();
+		novoUsuario = new Tela();
 	}
 	
 	public void salvarUsuario() {
 		repository.salvar(novoUsuario);
 	}
 
-	public Usuario getNovoUsuario() {
+	public Tela getNovoUsuario() {
 		return novoUsuario;
 	}
 }
