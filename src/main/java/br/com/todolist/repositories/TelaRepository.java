@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import br.com.todolist.model.Tela;
 import br.com.todolist.util.Transacional;
 
-public class UsuarioRepository implements Serializable{
+public class TelaRepository implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	

@@ -7,21 +7,21 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.todolist.model.Tela;
-import br.com.todolist.repositories.UsuarioRepository;
+import br.com.todolist.repositories.TelaRepository;
 
 @Named
 @ViewScoped
-public class UsuarioBean implements Serializable{
+public class TelaBean implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	@Inject
 	
-	private UsuarioRepository repository;
+	private TelaRepository repository;
 	
 	private Tela novoUsuario;
 	
-	public UsuarioBean() {
+	public TelaBean() {
 		novoUsuario = new Tela();
 	}
 	
