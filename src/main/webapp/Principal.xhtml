@@ -4,13 +4,26 @@
       xmlns:p="http://primefaces.org/ui">
 <h:head>
     <meta charset="UTF-8"/>
+    <title>Lista de Tarefas</title>
 </h:head>
 <h:body>
 
-    <h:form>
-
+    <h:form id="principal">
+		<p:dataTable value="#{listaTarefaBean.listaTarefas}" var="tarefas"
+			emptyMessage="Nenhuma tarefa cadastrada">
+		</p:dataTable>
         
+        <p:column headerText="Código" width="200">
+        	<h:outputText value="#{tarefas.id}"/>
+        </p:column>
 
+		<p:column headerText="Descrição" width="200">
+        	<h:outputText value="#{tarefas.descricao}"/>
+        </p:column>
+        
+        <p:column headerText="Status" width="200">
+        	<h:outputText value="#{tarefas.statusTarefa}"/>
+        </p:column>
     </h:form>
 
 </h:body>
