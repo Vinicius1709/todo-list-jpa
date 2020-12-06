@@ -9,6 +9,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -43,6 +44,9 @@ public class ListaTarefa implements Serializable {
 	@Column(name = "status_tarefa")
 	private StatusTarefa statusTarefa;
 
+	@ManyToOne
+	private Usuario usuario;
+	
 	public ListaTarefa() {
 
 	}
@@ -111,6 +115,14 @@ public class ListaTarefa implements Serializable {
 
 	public void setStatusTarefa(StatusTarefa statusTarefa) {
 		this.statusTarefa = statusTarefa;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	@Override
