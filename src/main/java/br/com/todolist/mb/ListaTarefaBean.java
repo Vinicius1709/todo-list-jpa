@@ -22,11 +22,26 @@ public class ListaTarefaBean implements Serializable {
 
     private List<ListaTarefa> listaTarefas;
 
-    public void Consultar() {
+    private ListaTarefa novaTarefa;
+    
+    public void consultar() {
         listaTarefas = repository.listarTudo();
     }
 
+    public void criarNovaTarefa() {
+    	novaTarefa = new ListaTarefa();
+    }
+    
+    public void salvarNovaTarefa() {
+    	repository.salvar(novaTarefa);
+    	consultar();
+    }
+    
     public List<ListaTarefa> getListaTarefas() {
         return listaTarefas;
     }
+
+	public ListaTarefa getNovaTarefa() {
+		return novaTarefa;
+	}
 }
